@@ -8,8 +8,11 @@
     <link rel="shortcut icon" href="{{ Configs.ctf_small_icon }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('views.themes', theme='core', path='css/fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('views.themes', theme='core', path='css/core.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('views.themes_beta', theme='neon', path='css/plugins/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('views.themes_beta', theme='neon', path='css/plugins/slick.css') }}">
     <link rel="stylesheet" href="{{ url_for('views.themes', path='css/style.dev.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HackerThemes/theme-machine@latest/dist/neon-glow/css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="{{ url_for('views.themes_beta', theme='neon', path='css/style.custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('views.themes_beta', theme='neon', path='css/plugins/bootstrap4-neon-glow-min.css') }}">
 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
     {% block stylesheets %}{% endblock %}
@@ -29,7 +32,7 @@
     {{ Configs.theme_header }}
   </head>
 
-  <body>
+  <body  class="cs-dark">
     {% include "components/navbar.html" %}
 
     <main role="main">
@@ -50,6 +53,13 @@
 
     {% block entrypoint %}
       <script defer="defer" src="{{ url_for('views.themes', theme='core', path='js/pages/main.js') }}"></script>
+
+      <script defer="defer" src="{{ url_for('views.themes', theme='neon', path='js/plugins/jquery-3.6.0.min.js') }}"></script>
+      <script defer="defer" src="{{ url_for('views.themes', theme='neon', path='js/plugins/jquery.slick.min.js') }}"></script>
+      <script defer="defer" src="{{ url_for('views.themes', theme='neon', path='js/plugins/jquery.counter.min.js') }}"></script>
+      <script defer="defer" src="{{ url_for('views.themes', theme='neon', path='js/plugins/wow.min.js') }}"></script>
+      <script defer="defer" src="{{ url_for('views.themes_beta', theme='neon', path='js/main.js') }}"></script>
+
     {% endblock %}
 
     {% block scripts %}{% endblock %}
